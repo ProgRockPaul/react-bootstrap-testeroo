@@ -4,22 +4,23 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
-import {Button, Nav, Navbar, NavDropdown, MenuItem} from 'react-bootstrap';
+import {Button, Nav, NavItem, Navbar, NavDropdown, MenuItem, Col} from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap';
 import About from "./components/About";
 import Home from "./components/Home";
 import Topics from './components/Topics';
 import Contact from './components/Contact';
+import {FacebookIcon, TwitterIcon, GooglePlusIcon, LinkedinIcon} from './footer';
 
 
 
 const App = () => (
   <Router>
-    <div>
-      <Navbar>
+    <div className="container-fluid">
+      <Navbar justified="all">
         <Navbar.Header>
           <Navbar.Brand>
-            <Nav bsStyle="pills" href='/'>Home</Nav>
+            <Nav bsStyle="pills"> <a href='/'>Home</a></Nav>
           </Navbar.Brand>
         </Navbar.Header>
               <Nav>
@@ -36,6 +37,14 @@ const App = () => (
       <Route path="/about" component={About}/>
       <Route path="/topics" component={Topics}/>
       <Route path="/contact" component={Contact}/>
+        <div>
+          <Col xs={3} md={3}><FacebookIcon />  </Col>
+          <Col xs={3} md={3}><TwitterIcon />  </Col>
+          <Col xs={3} md={3}><GooglePlusIcon />  </Col>
+          <Col xs={3} md={3}><LinkedinIcon />  </Col>
+        </div>
+
+
 
       </div>
 
